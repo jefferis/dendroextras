@@ -1,0 +1,19 @@
+Package: dendroextras
+Maintainer: Gregory Jefferis <jefferis@gmail.com>
+License: GPL (>= 2)
+Title: Extra functions to cut, label and colour dendrogram clusters
+Type: Package
+Author: Gregory Jefferis
+Description: This package provides extra functions to manipulate dendrograms
+    that builds on the base functions provided by the stats package. The main
+    functionality it was designed to add is the ability to colour all the edges
+    in an object of class dendrogram according to cluster membership i.e. each
+    subtree is coloured, not just the terminal leaves. In addition some utility
+    functions to set and query labels of dendrogram and hclust objects.
+Version: 0.1
+Date: 2012-12-29
+Suggests:
+    testthat
+Collate:
+    'dendroextras-package.R'
+    'labels.R'
