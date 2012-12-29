@@ -15,7 +15,6 @@ test_that("Ordered cut of an hclust object", {
               "Hawaii", "West Virginia", "Maine", "South Dakota", "North Dakota", 
               "Vermont", "Minnesota", "Wisconsin", "Iowa", "New Hampshire"))
       expect_that(slice(hc,k=5),equals(cut.ordered.k5),"Cut into k=5 groups")
-      
     })
 
 test_that("Compare group memberships with those returned by rect.hclust", {
@@ -33,3 +32,9 @@ test_that("Compare group memberships with those returned by rect.hclust", {
       expect_that(slice(hc,k=5),equals(cutbyrect.hclust),"Compare with rect.hclust")
     })
 
+test_that("Compare slice.hclust and slice.dendrogram", {
+      hc <- hclust(dist(USArrests), "ave")
+      dend <- as.dendrogram(hc)
+      slice_hc=slice(hc,k=5)
+      expect_that(slice(dend,k=5),equals(slice_hc),"Compare slicing hclust and dendrogram objects for k=5")
+    })
