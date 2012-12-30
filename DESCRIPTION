@@ -18,3 +18,4 @@ Collate:
     'dendroextras-package.R'
     'labels.R'
     'slice.R'
+    'colour_clusters.R'
