@@ -1,7 +1,7 @@
 #' @export 
 colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
   # TODO make this more modular
-  g=cutree(as.hclust(d),k=k,h=h)
+  g=slice(d,k=k,h=h)
   
   k=max(g)
   if(is.function(col)) col=col(k)
