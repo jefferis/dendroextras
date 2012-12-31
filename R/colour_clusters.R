@@ -53,3 +53,35 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
 }
 
 color_clusters<-colour_clusters
+
+#' Return the leaf colours of a dendrogram
+#' 
+#' @details The returned colours will be in dendrogram order.
+#' @param d the dendrogram
+#' @param col_to_return Character scalar - kind of colour attribute to return
+#' @return named character vector of colours, NA_character_ where missing
+#' @author jefferis
+#' @export
+#' @aliases leaf_colors
+#' @seealso \code{\link{slice},\link{colour_clusters}}
+#' @examples
+#' d5=colour_clusters(hclust(dist(USArrests), "ave"),5)
+#' leaf_colours(d5)
+leaf_colours<-function(d,col_to_return=c("edge",'node','label')){
+  if(!inherits(d,'dendrogram')) stop("I need a dendrogram!")
+  col_to_return=match.arg(col_to_return)
+  leaf_col<-function(n,col_to_return) {
+    if(is.leaf(n)) {
+      col=switch(col_to_return,
+          edge=attr(n,'edgePar')$col,
+          node=attr(n,'nodePar')$col,
+          label=attr(n,'nodePar')$lab.col)
+      if(is.null(col)) col=NA_character_
+      structure(col,.Names=attr(n,'label'))
+    } else NULL
+  }
+  
+  unlist(dendrapply(d,leaf_col,col_to_return))
+}
+
+leaf_colors<-leaf_colours
