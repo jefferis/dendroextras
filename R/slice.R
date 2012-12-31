@@ -29,7 +29,7 @@ slice.hclust<-function(x,k=NULL,h=NULL,...){
   chc=cutree(x,k=k,h=h)
   # find the numeric ids of the first listed members of each group
   unique_ids=which(!duplicated(chc))
-  # create a numeric vector where the position in the vector indicate new group
+  # create a numeric vector where the position in the vector indicates new group
   # number i.e. if position 1 contains group 4 then old group 4 -> new group 1
   # NB x$order contains original indices of tree elements ordered by dendrogram
   xtable=order(match(unique_ids, x$order))
@@ -42,5 +42,6 @@ slice.hclust<-function(x,k=NULL,h=NULL,...){
 #' @method slice dendrogram
 #' @export
 slice.dendrogram<-function(x,k=NULL,h=NULL,...){
+  # TODO something a bit more efficient than this!
   slice(as.hclust(x),k=k,h=h,...)
 }
