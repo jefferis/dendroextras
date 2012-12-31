@@ -11,6 +11,7 @@
 #' @param col Function or vector of colours
 #' @param addGroupLabel Whether to add a numeric label to each group
 #' @return a tree object of class dendrogram.
+#' @aliases color_clusters
 #' @author jefferis
 #' @export
 #' @seealso \code{\link{slice},\link{cutree},\link{dendrogram}}
@@ -50,3 +51,5 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
   }
   descendTree(d)
 }
+
+color_clusters<-colour_clusters
