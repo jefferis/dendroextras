@@ -29,3 +29,13 @@ test_that("Colouring a dendrogram by cutting on height or number of groups", {
       expect_that(cdendk5, equals(cdendh50))
     })
 
+test_that("Can cut/colour an hclust object returning a dendrogram", {
+      hc <- hclust(dist(USArrests), "ave")
+      dend <- as.dendrogram(hc)
+      colours5=c("red",'green','blue','cyan','magenta')
+      cdendk5 <- colour_clusters(dend,k=5,col=colours5)
+      chck5 <- colour_clusters(hc,k=5,col=colours5)
+      
+      expect_that(cdendk5, equals(chck5))
+    })
+
