@@ -18,3 +18,14 @@ test_that("Colour a dendrogram by cluster identity", {
       expect_that(labels(hc), equals(names(leafcolours)))
       expect_equivalent(rep(colours5,c(2L,14L,14L,10L,10L)),leafcolours)
     })
+
+test_that("Colouring a dendrogram by cutting on height or number of groups", {
+      hc <- hclust(dist(USArrests), "ave")
+      dend <- as.dendrogram(hc)
+      colours5=c("red",'green','blue','cyan','magenta')
+      cdendk5 <- colour_clusters(dend,k=5,col=colours5)
+      cdendh50 <- colour_clusters(dend,h=50,col=colours5)
+      
+      expect_that(cdendk5, equals(cdendh50))
+    })
+
