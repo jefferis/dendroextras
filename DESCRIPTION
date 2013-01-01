@@ -11,8 +11,8 @@ Description: This package provides extra functions to manipulate dendrograms
     subtree is coloured, not just the terminal leaves. In addition it provides
     some utility functions to cut dendrogram and hclust objects and to set/get
     labels.
-Version: 0.1
-Date: 2012-12-31
+Version: 0.1-1
+Date: 2013-01-01
 Suggests:
     testthat
 Collate:
