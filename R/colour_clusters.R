@@ -5,11 +5,16 @@
 #' The edgePar attribute of nodes will be augmented by a new list item col.
 #' The groups will be defined by a call to \code{\link{slice}} using the k or h
 #' parameters.
+#' @details If \code{groupLabels=TRUE} then numeric group labels will added to
+#'   each cluster. If a vector is supplied then these entries will be used as 
+#'   the group labels. If a function is supplied then it will be passed a 
+#'   numeric vector of groups (e.g. 1:5) and must return the formatted group
+#'   labels.
 #' @param d A \code{dendrogram} or \code{hclust} tree object
 #' @param k number of groups (passed to \code{slice})
 #' @param h height at which to cut tree (passed to \code{slice})
 #' @param col Function or vector of colours
-#' @param addGroupLabel Whether to add a numeric label to each group
+#' @param groupLabels If TRUE add numeric group label - see Details for options
 #' @return a tree object of class dendrogram.
 #' @aliases color_clusters
 #' @author jefferis
@@ -18,7 +23,11 @@
 #' @examples
 #' d5=colour_clusters(hclust(dist(USArrests), "ave"),5)
 #' plot(d5)
-colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
+#' d5g=colour_clusters(hclust(dist(USArrests), "ave"),5,groupLabels=TRUE)
+#' plot(d5g)
+#' d5gr=colour_clusters(hclust(dist(USArrests), "ave"),5,groupLabels=as.roman)
+#' plot(d5gr)
+colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,groupLabels=NULL){
   # TODO make this more modular
   if(!inherits(d,'dendrogram') && !inherits(d,'hclust'))
     stop("Expects a dendrogram or hclust object")
@@ -28,6 +37,14 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
   k=max(g)
   if(is.function(col)) col=col(k)
   else if(length(col)!=k) stop("Must give same number of colours as clusters")
+  
+  if(!is.null(groupLabels)){
+    if(length(groupLabels)==1 && is.function(groupLabels)){
+      groupLabels=groupLabels(seq.int(length.out=k))
+    }
+    if(length(groupLabels)!=k)
+      stop("Must give same number of group labels as clusters")
+  }
   
   addcol<-function(n,col) {
     attr(n,'edgePar')=c(attr(n,'edgePar'),list(col=col))
@@ -44,8 +61,8 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
       # else assign colours
       # sd=dendrapply(sd,addcol,col[groupsinsubtree],groupsinsubtree)
       sd=dendrapply(sd,addcol,col[groupsinsubtree])
-      if(addGroupLabel){
-        attr(sd,'edgetext')=groupsinsubtree
+      if(!is.null(groupLabels)){
+        attr(sd,'edgetext')=groupLabels[groupsinsubtree]
         attr(sd,'edgePar')=c(attr(sd,'edgePar'),list(p.border=col[groupsinsubtree]))
       }
     }
