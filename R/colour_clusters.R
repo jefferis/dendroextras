@@ -46,7 +46,7 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,addGroupLabel=FALSE){
       sd=dendrapply(sd,addcol,col[groupsinsubtree])
       if(addGroupLabel){
         attr(sd,'edgetext')=groupsinsubtree
-        attr(sd,'edgePar')=c(attr(sd,'edgePar'),list(p.col=col[groupsinsubtree]))
+        attr(sd,'edgePar')=c(attr(sd,'edgePar'),list(p.border=col[groupsinsubtree]))
       }
     }
     sd
