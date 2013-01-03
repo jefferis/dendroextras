@@ -55,3 +55,13 @@ test_that("Can cut/colour an hclust object returning a dendrogram", {
       expect_that(cdendk5, equals(chck5))
     })
 
+test_that("Can colour a dendrogram and add group labels", {
+      hc <- hclust(dist(USArrests), "ave")
+      dend <- as.dendrogram(hc)
+      colours5=c("red",'green','blue','cyan','magenta')
+      cdendk51 <- colour_clusters(dend,k=5,col=colours5,groupLabels=TRUE)
+      cdendk52 <- colour_clusters(dend,k=5,col=colours5,groupLabels=1:5)
+      cdendk53 <- colour_clusters(dend,k=5,col=colours5,groupLabels=LETTERS[1:5])
+      cdendk54 <- colour_clusters(dend,k=5,col=colours5,groupLabels=as.roman)
+    })
+

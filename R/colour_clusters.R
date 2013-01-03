@@ -39,10 +39,16 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,groupLabels=NULL){
   else if(length(col)!=k) stop("Must give same number of colours as clusters")
   
   if(!is.null(groupLabels)){
-    if(length(groupLabels)==1 && is.function(groupLabels)){
-      groupLabels=groupLabels(seq.int(length.out=k))
+    if(length(groupLabels)==1){
+      if(is.function(groupLabels))
+        groupLabels=groupLabels(seq.int(length.out=k))
+      else if(is.logical(groupLabels)){
+        if(groupLabels)
+          groupLabels=seq.int(length.out=k)
+        else groupLabels=NULL
+      }
     }
-    if(length(groupLabels)!=k)
+    if(!is.null(groupLabels) && length(groupLabels)!=k)
       stop("Must give same number of group labels as clusters")
   }
   
