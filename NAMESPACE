@@ -1,0 +1,8 @@
+S3method("labels<-",dendrogram)
+S3method(labels,hclust)
+S3method(slice,dendrogram)
+S3method(slice,hclust)
+export("labels<-")
+export(colour_clusters)
+export(leaf_colours)
+export(slice)
