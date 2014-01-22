@@ -3,9 +3,9 @@
 \alias{labels<-.dendrogram}
 \title{Set the labels of an object}
 \usage{
-  labels(x,...) <- value
+labels(x,...) <- value
 
-  labels(x,...) <- value
+labels(x,...) <- value
 }
 \arguments{
   \item{x}{Object on which to set labels}
@@ -16,12 +16,12 @@
   methods}
 }
 \value{
-  object of class dendrogram
+object of class dendrogram
 }
 \description{
-  Set the labels of an object
+Set the labels of an object
 
-  Set the labels of a dendrogram
+Set the labels of a dendrogram
 }
 \examples{
 hc <- hclust(dist(USArrests), "ave")
@@ -29,9 +29,9 @@ dend <- as.dendrogram(hc)
 labels(dend)<-abbreviate(labels(dend),minlength=2)
 }
 \author{
-  jefferis
+jefferis
 }
 \seealso{
-  \code{\link{dendrogram},\link{labels}}
+\code{\link{dendrogram},\link{labels}}
 }
 

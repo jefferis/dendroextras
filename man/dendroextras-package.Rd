@@ -4,12 +4,12 @@
 \alias{dendroextras-package}
 \title{Extra functions to cut, label and colour dendrogram clusters}
 \description{
-  Extra functions to cut, label and colour dendrogram
-  clusters
+Extra functions to cut, label and colour dendrogram
+clusters
 }
 \seealso{
-  \code{\link{dendrogram}, \link{hclust}} in
-  \code{\link{stats}} package.
+\code{\link{dendrogram}, \link{hclust}} in
+\code{\link{stats}} package.
 }
 \keyword{dendrogram}
 \keyword{package,}

@@ -2,7 +2,7 @@
 \alias{slice}
 \title{Cut a tree-like object into groups numbered in tree order}
 \usage{
-  slice(x, k = NULL, h = NULL, ...)
+slice(x, k = NULL, h = NULL, ...)
 }
 \arguments{
   \item{x}{tree like object}
@@ -16,13 +16,13 @@
   \item{...}{Additional parameters passed to methods}
 }
 \value{
-  a named vector with group memberships
+a named vector with group memberships
 }
 \description{
-  In comparison with cutree, the groups are numbered from
-  left to right as per the tree when plotted in its
-  standard horizontal form. Note also that the return value
-  will have the leaves sorted in dendrogram order.
+In comparison with cutree, the groups are numbered from
+left to right as per the tree when plotted in its standard
+horizontal form. Note also that the return value will have
+the leaves sorted in dendrogram order.
 }
 \examples{
 hc <- hclust(dist(USArrests), "ave")
@@ -32,9 +32,9 @@ slice(hc,k=5)
 slice(hc,k=5)[order(hc$order)]
 }
 \author{
-  jefferis
+jefferis
 }
 \seealso{
-  \code{\link{cutree},\link{cut.dendrogram},\link{rect.hclust}}
+\code{\link{cutree},\link{cut.dendrogram},\link{rect.hclust}}
 }
 

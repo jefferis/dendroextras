@@ -15,8 +15,3 @@ Version: 0.1-2.99
 Date: 2013-01-03
 Suggests:
     testthat
-Collate:
-    'dendroextras-package.R'
-    'labels.R'
-    'slice.R'
-    'colour_clusters.R'

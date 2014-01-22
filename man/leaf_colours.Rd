@@ -3,8 +3,7 @@
 \alias{leaf_colours}
 \title{Return the leaf colours of a dendrogram}
 \usage{
-  leaf_colours(d,
-    col_to_return = c("edge", "node", "label"))
+leaf_colours(d, col_to_return = c("edge", "node", "label"))
 }
 \arguments{
   \item{d}{the dendrogram}
@@ -13,23 +12,23 @@
   attribute to return}
 }
 \value{
-  named character vector of colours, NA_character_ where
-  missing
+named character vector of colours, NA_character_ where
+missing
 }
 \description{
-  Return the leaf colours of a dendrogram
+Return the leaf colours of a dendrogram
 }
 \details{
-  The returned colours will be in dendrogram order.
+The returned colours will be in dendrogram order.
 }
 \examples{
 d5=colour_clusters(hclust(dist(USArrests), "ave"),5)
 leaf_colours(d5)
 }
 \author{
-  jefferis
+jefferis
 }
 \seealso{
-  \code{\link{slice},\link{colour_clusters}}
+\code{\link{slice},\link{colour_clusters}}
 }
 

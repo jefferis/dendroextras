@@ -2,7 +2,7 @@
 \alias{labels.hclust}
 \title{Find labels of hclust object (in dendrogram order)}
 \usage{
-  \method{labels}{hclust} (object, ...)
+\method{labels}{hclust}(object, ...)
 }
 \arguments{
   \item{object}{hclust object from which to extract labels}
@@ -10,14 +10,13 @@
   \item{...}{Additional arguments (ignored)}
 }
 \value{
-  character vector of labels in dendrogram order
+character vector of labels in dendrogram order
 }
 \description{
-  NB will return labels in dendrogram order, not in the
-  order of the original labels retained in object$labels
-  ususally corresponding to the row or column names of the
-  \code{\link{dist}} object provided to
-  \code{\link{hclust}}.
+NB will return labels in dendrogram order, not in the order
+of the original labels retained in object$labels ususally
+corresponding to the row or column names of the
+\code{\link{dist}} object provided to \code{\link{hclust}}.
 }
 \examples{
 hc <- hclust(dist(USArrests), "ave")
@@ -25,9 +24,9 @@ dend <- as.dendrogram(hc)
 stopifnot(all.equal(labels(hc),labels(dend)))
 }
 \author{
-  jefferis
+jefferis
 }
 \seealso{
-  \code{\link{labels},\link{hclust}}
+\code{\link{labels},\link{hclust}}
 }
 
