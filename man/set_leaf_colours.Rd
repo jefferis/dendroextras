@@ -1,0 +1,33 @@
+\name{set_leaf_colours}
+\alias{set_leaf_colors}
+\alias{set_leaf_colours}
+\title{Set the leaf colours of a dendrogram}
+\usage{
+set_leaf_colours(d, col, col_to_set = c("edge", "node", "label"))
+}
+\arguments{
+  \item{d}{the dendrogram}
+
+  \item{col}{Single colour or named character vector of
+  colours. When NA no colour will be set.}
+
+  \item{col_to_set}{Character scalar - kind of colour
+  attribute to set}
+}
+\description{
+Set the leaf colours of a dendrogram
+}
+\examples{
+d5=colour_clusters(hclust(dist(USArrests), "ave"),5)
+dred=set_leaf_colours(d5,'red','edge')
+stopifnot(isTRUE(all(leaf_colours(dred)=='red')))
+d52=set_leaf_colours(d5,leaf_colours(d5),'edge')
+stopifnot(all.equal(d5,d52))
+}
+\author{
+jefferis
+}
+\seealso{
+\code{\link{slice},\link{colour_clusters}}
+}
+

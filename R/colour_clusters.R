@@ -110,3 +110,52 @@ leaf_colours<-function(d,col_to_return=c("edge",'node','label')){
 }
 
 leaf_colors<-leaf_colours
+
+#' Set the leaf colours of a dendrogram
+#' 
+#' @param d the dendrogram
+#' @param col Single colour or named character vector of colours. When NA no
+#'   colour will be set.
+#' @param col_to_set Character scalar - kind of colour attribute to set
+#' @author jefferis
+#' @export
+#' @aliases set_leaf_colors
+#' @seealso \code{\link{slice},\link{colour_clusters}}
+#' @examples
+#' d5=colour_clusters(hclust(dist(USArrests), "ave"),5)
+#' dred=set_leaf_colours(d5,'red','edge')
+#' stopifnot(isTRUE(all(leaf_colours(dred)=='red')))
+#' d52=set_leaf_colours(d5,leaf_colours(d5),'edge')
+#' stopifnot(all.equal(d5,d52))
+set_leaf_colours<-function(d,col,col_to_set=c("edge",'node','label')){
+  if(!inherits(d,'dendrogram')) stop("I need a dendrogram!")
+  d_labels=labels(d)
+  if(length(col)==1) {
+    # special case, we want to set all the colour the same - doesn't need to be
+    # named (indeed makes no sense to be named)
+    col=structure(rep(col,length(d_labels)),.Names=d_labels)
+  } else {
+    # check the colour vector is sensibly named
+    if(is.null(names(col)) || !all(names(col) %in% d_labels))
+      stop("col must be a vector of colours _named_ by existing node labels")
+  }
+  col_to_set=match.arg(col_to_set)
+  leaf_col<-function(n,col,col_to_set) {
+    if(is.leaf(n)) {
+      this_col=unname(col[attr(n,'label')])
+      if(is.na(this_col)) {
+        # do nothing
+      } else if(col_to_set=='edge'){
+        attr(n,'edgePar')$col=this_col
+      } else if(col_to_set=='edge') {
+        attr(n,'nodePar')$col=this_col
+      } else if(col_to_set=='label') {
+        attr(n,'nodePar')$lab.col=this_col
+      }
+    }
+    n
+  }
+  dendrapply(d,leaf_col,col,col_to_set)
+}
+
+set_leaf_colors<-set_leaf_colours
