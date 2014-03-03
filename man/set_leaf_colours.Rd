@@ -4,6 +4,8 @@
 \title{Set the leaf colours of a dendrogram}
 \usage{
 set_leaf_colours(d, col, col_to_set = c("edge", "node", "label"))
+
+set_leaf_colors(d, col, col_to_set = c("edge", "node", "label"))
 }
 \arguments{
   \item{d}{the dendrogram}

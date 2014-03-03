@@ -5,6 +5,8 @@
 \usage{
 colour_clusters(d, k = NULL, h = NULL, col = rainbow,
   groupLabels = NULL)
+
+color_clusters(d, k = NULL, h = NULL, col = rainbow, groupLabels = NULL)
 }
 \arguments{
   \item{d}{A \code{dendrogram} or \code{hclust} tree

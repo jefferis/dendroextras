@@ -77,6 +77,8 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,groupLabels=NULL){
   descendTree(d)
 }
 
+#' @export
+#' @rdname colour_clusters
 color_clusters<-colour_clusters
 
 #' Return the leaf colours of a dendrogram
@@ -158,4 +160,6 @@ set_leaf_colours<-function(d,col,col_to_set=c("edge",'node','label')){
   dendrapply(d,leaf_col,col,col_to_set)
 }
 
+#' @export
+#' @rdname set_leaf_colours
 set_leaf_colors<-set_leaf_colours
