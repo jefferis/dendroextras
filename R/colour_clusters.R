@@ -34,6 +34,14 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,groupLabels=NULL){
   g=slice(d,k=k,h=h)
   if(inherits(d,'hclust')) d=as.dendrogram(d)
   
+  # we need unique labels later on, so store the original labels if there are
+  # duplicates and make the active ones unique
+  if(fix_labels<-any(duplicated(orig_labels<-labels(d)))){  
+    unique_labels=make.unique(orig_labels)
+    labels(d)<-unique_labels
+    names(g)=unique_labels
+  }
+  
   k=max(g)
   if(is.function(col)) col=col(k)
   else if(length(col)!=k) stop("Must give same number of colours as clusters")
@@ -74,7 +82,9 @@ colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,groupLabels=NULL){
     }
     sd
   }
-  descendTree(d)
+  d=descendTree(d)
+  if(fix_labels) labels(d)=orig_labels
+  d
 }
 
 #' @export
