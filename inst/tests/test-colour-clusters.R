@@ -65,3 +65,20 @@ test_that("Can colour a dendrogram and add group labels", {
       cdendk54 <- colour_clusters(dend,k=5,col=colours5,groupLabels=as.roman)
     })
 
+test_that("Can colour a dendrogram with non-unique labels",{
+  dmat=structure(c(4.66, 2.72, 2.75, 2.71, 4.21, 2.83, 3.45, 2.26, 3.4, 
+                   2.68, 0.74, 3, 2.32, 5.09, 2.96), 
+                 Labels = c("A", "B", "C", "D", "E", "F"), Size = 6L, 
+                 class = "dist", Diag = FALSE, Upper = FALSE)
+  
+  dmat2=structure(c(4.66, 2.72, 2.75, 2.71, 4.21, 2.83, 3.45, 2.26, 3.4, 
+              2.68, 0.74, 3, 2.32, 5.09, 2.96), 
+            Labels = c("A", "A", "B", "A", "B", "A"), Size = 6L, 
+            class = "dist", Diag = FALSE, Upper = FALSE)
+  hc=hclust(dmat)
+  hc2=hclust(dmat2)
+  plot(hc)
+  expect_is(hcd<-colour_clusters(hc, k=2), 'dendrogram')
+  expect_is(hcd2<-colour_clusters(hc2, k=2), 'dendrogram')
+  expect_equal(unname(leaf_colors(hcd)),unname(leaf_colors(hcd2)))  
+})
