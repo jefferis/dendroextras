@@ -159,7 +159,7 @@ set_leaf_colours<-function(d,col,col_to_set=c("edge",'node','label')){
         # do nothing
       } else if(col_to_set=='edge'){
         attr(n,'edgePar')$col=this_col
-      } else if(col_to_set=='edge') {
+      } else if(col_to_set=='node') {
         attr(n,'nodePar')$col=this_col
       } else if(col_to_set=='label') {
         attr(n,'nodePar')$lab.col=this_col
