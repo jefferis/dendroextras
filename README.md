@@ -6,7 +6,7 @@ An R package providing additional functions to cut, label and colour dendrogram 
 
 ## Installation
 ### Released versions
-The recommendation is to install from [CRAN](http://cran.r-project.org/).
+The recommendation is to install from [CRAN](https://cran.r-project.org/).
 
 ```r
 install.packages("dendroextras")
@@ -22,4 +22,4 @@ library(devtools)
 install_github("dendroextras", "jefferis")
 ```
 
-Note: Windows users need [Rtools](http://www.murdoch-sutherland.com/Rtools/) and [devtools](http://CRAN.R-project.org/package=devtools) to install this way.
+Note: Windows users need [Rtools](http://www.murdoch-sutherland.com/Rtools/) and [devtools](https://CRAN.R-project.org/package=devtools) to install this way.
