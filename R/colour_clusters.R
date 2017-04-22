@@ -27,6 +27,8 @@
 #' plot(d5g)
 #' d5gr=colour_clusters(hclust(dist(USArrests), "ave"),5,groupLabels=as.roman)
 #' plot(d5gr)
+#' @importFrom grDevices rainbow
+#' @importFrom stats as.dendrogram dendrapply cutree
 colour_clusters<-function(d,k=NULL,h=NULL,col=rainbow,groupLabels=NULL){
   # TODO make this more modular
   if(!inherits(d,'dendrogram') && !inherits(d,'hclust'))
@@ -104,6 +106,7 @@ color_clusters<-colour_clusters
 #' @examples
 #' d5=colour_clusters(hclust(dist(USArrests), "ave"),5)
 #' leaf_colours(d5)
+#' @importFrom stats is.leaf
 leaf_colours<-function(d,col_to_return=c("edge",'node','label')){
   if(!inherits(d,'dendrogram')) stop("I need a dendrogram!")
   col_to_return=match.arg(col_to_return)

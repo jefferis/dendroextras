@@ -41,6 +41,7 @@ slice.hclust<-function(x,k=NULL,h=NULL,...){
 
 #' @method slice dendrogram
 #' @export
+#' @importFrom stats as.hclust
 slice.dendrogram<-function(x,k=NULL,h=NULL,...){
   # TODO something a bit more efficient than this!
   slice(as.hclust(x),k=k,h=h,...)
