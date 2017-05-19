@@ -1,6 +1,9 @@
 # dendroextras
 
-[![Build Status](https://travis-ci.org/jefferis/dendroextras.png)](https://travis-ci.org/jefferis/dendroextras)
+[![Release Version](https://img.shields.io/github/release/jefferis/dendroextras.svg)](https://github.com/jefferis/dendroextras/releases/latest) 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/dendroextras)](https://cran.r-project.org/package=dendroextras) 
+[![Build Status](https://travis-ci.org/jefferis/dendroextras.svg)](https://travis-ci.org/jefferis/dendroextras)
+
 
 An R package providing additional functions to cut, label and colour dendrogram clusters.
 
