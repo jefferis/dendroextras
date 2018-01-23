@@ -5,4 +5,5 @@
 
 library(testthat)
 library(dendroextras)
-test_package("dendroextras")
+test_check("dendroextras")
+
