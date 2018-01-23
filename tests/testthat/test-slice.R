@@ -19,7 +19,9 @@ test_that("Ordered cut of an hclust object", {
 
 test_that("Compare group memberships with those returned by rect.hclust", {
       hc <- hclust(dist(USArrests), "ave")
+      pdf(file = tf <- tempfile(fileext = '.pdf'))
       plot(hc)
+      unlink(tf)
       # find groups with rect.hclust (returns lists of named numeric ids of leaves)
       # list order does match dendrogram order for groups
       rhc=rect.hclust(hc,k=5)
