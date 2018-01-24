@@ -1,3 +1,7 @@
+dendroextras 0.2.3
+==================
+* Stop package tests writing PDFs outside tempdir (CRAN request)
+
 dendroextras 0.2.2
 ==================
 * namespace/description fixes for recent versions of R

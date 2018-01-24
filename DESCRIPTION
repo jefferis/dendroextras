@@ -1,9 +1,8 @@
 Package: dendroextras
-Maintainer: Gregory Jefferis <jefferis@gmail.com>
+Authors@R: person("Gregory","Jefferis", email="jefferis@gmail.com", role = c("aut", "cre"))
 License: GPL (>= 2)
 Title: Extra Functions to Cut, Label and Colour Dendrogram Clusters
 Type: Package
-Author: Gregory Jefferis
 Description: Provides extra functions to manipulate dendrograms
     that build on the base functions provided by the 'stats' package. The main
     functionality it is designed to add is the ability to colour all the edges
@@ -11,7 +10,7 @@ Description: Provides extra functions to manipulate dendrograms
     subtree is coloured, not just the terminal leaves. In addition it provides
     some utility functions to cut 'dendrogram' and 'hclust' objects and to 
     set/get labels.
-Version: 0.2.2
+Version: 0.2.3
 Suggests:
     testthat
 RoxygenNote: 6.0.1
