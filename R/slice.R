@@ -34,7 +34,7 @@ slice.hclust<-function(x,k=NULL,h=NULL,...){
   # NB x$order contains original indices of tree elements ordered by dendrogram
   xtable=order(match(unique_ids, x$order))
   # now map old groups to new
-  newgroups=structure(match(chc,xtable),.Names=names(chc))
+  newgroups=structure(match(chc,xtable),names=names(chc))
   # finally return them in dendrogram order
   newgroups[x$order]
 }

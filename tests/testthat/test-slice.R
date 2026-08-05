@@ -4,7 +4,7 @@ test_that("Ordered cut of an hclust object", {
       hc <- hclust(dist(USArrests), "ave")
       cut.ordered.k5 = structure(c(1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 
               3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 
-              4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5), .Names = c("Florida", "North Carolina", 
+              4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5), names = c("Florida", "North Carolina", 
               "California", "Maryland", "Arizona", "New Mexico", "Delaware", 
               "Alabama", "Louisiana", "Illinois", "New York", "Michigan", "Nevada", 
               "Alaska", "Mississippi", "South Carolina", "Washington", "Oregon", 
@@ -27,7 +27,7 @@ test_that("Compare group memberships with those returned by rect.hclust", {
       rhc=rect.hclust(hc,k=5)
       # Unlist and return as a single vector of named groups
       cutbyrect.hclust=structure(rep(seq(rhc),sapply(rhc,length)),
-          .Names=names(unlist(rhc)))
+          names=names(unlist(rhc)))
       # reorder, first so that we are in original order 
       # and then in dendrogram order  
       cutbyrect.hclust=cutbyrect.hclust[order(unlist(rhc))][hc$order]

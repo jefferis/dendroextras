@@ -7,11 +7,11 @@ test_that("Can find leaf colours", {
       cdendk5 <- colour_clusters(dend,k=5,col=colours5)
       leafcolours <- unlist(dendrapply(cdendk5,function(n) 
                 if(is.leaf(n)) structure(attr(n,'edgePar')$col,
-                      .Names=attr(n,'label')) else NULL))
+                      names=attr(n,'label')) else NULL))
       
       expect_that(leaf_colours(cdendk5), equals(leafcolours))
       no_colours <- structure(rep(NA_character_,length(leafcolours)),
-          .Names=names(leafcolours))
+          names=names(leafcolours))
       expect_that(leaf_colours(dend),equals(no_colours),
           'no edge colours in dendrogram')
       expect_that(leaf_colours(cdendk5,'label'),equals(no_colours),

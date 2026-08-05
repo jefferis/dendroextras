@@ -1,3 +1,8 @@
+dendroextras 0.2.4
+==================
+* Replace deprecated special argument names in structure() calls for R-devel.
+* Fix redirected README URLs and malformed package keyword.
+
 dendroextras 0.2.3
 ==================
 * Stop package tests writing PDFs outside tempdir (CRAN request)

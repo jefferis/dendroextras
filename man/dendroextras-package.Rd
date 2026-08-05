@@ -40,4 +40,4 @@ Extra functions to cut, label and colour dendrogram clusters
   package.
 }
 \keyword{dendrogram}
-\keyword{package,}
+\keyword{package}

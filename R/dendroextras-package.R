@@ -26,5 +26,5 @@
 #' @seealso \code{\link{dendrogram}, \link{hclust}} in \code{\link{stats}} 
 #'   package.
 #' @docType package
-#' @keywords package, dendrogram
+#' @keywords package dendrogram
 NULL

@@ -1,17 +1,17 @@
 ## Changes since the last CRAN release
 
-* fix an error due to plots in package tests writing a PDF file outside the 
-  temp folder
-* see https://cran.r-project.org/web/checks/check_results_dendroextras.html
+This minor release addresses R-devel/CRAN notes:
+
+* replaces deprecated special argument names in `structure()` calls
+* fixes redirected README URLs
+* fixes a malformed package keyword
 
 ## Test environments
-* local OS X install, R 3.4.3
-* ubuntu 12.04 (on travis-ci), R 3.4.3
-* win-builder (devel and release)
+* local macOS install, R-4.6.1
+* win-builder (devel)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
 
-See https://win-builder.r-project.org/Sg6RLOE6nq8h/00check.log
-
+See https://win-builder.r-project.org/u4DBmK2Rroge

@@ -117,7 +117,7 @@ leaf_colours<-function(d,col_to_return=c("edge",'node','label')){
           node=attr(n,'nodePar')$col,
           label=attr(n,'nodePar')$lab.col)
       if(is.null(col)) col=NA_character_
-      structure(col,.Names=attr(n,'label'))
+      structure(col,names=attr(n,'label'))
     } else NULL
   }
   
@@ -148,7 +148,7 @@ set_leaf_colours<-function(d,col,col_to_set=c("edge",'node','label')){
   if(length(col)==1) {
     # special case, we want to set all the colour the same - doesn't need to be
     # named (indeed makes no sense to be named)
-    col=structure(rep(col,length(d_labels)),.Names=d_labels)
+    col=structure(rep(col,length(d_labels)),names=d_labels)
   } else {
     # check the colour vector is sensibly named
     if(is.null(names(col)) || !all(names(col) %in% d_labels))
