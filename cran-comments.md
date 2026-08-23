@@ -14,4 +14,4 @@ This minor release addresses R-devel/CRAN notes:
 
 0 errors | 0 warnings | 0 notes
 
-See https://win-builder.r-project.org/u4DBmK2Rroge
+See https://win-builder.r-project.org/010zAsxVW8oQ
