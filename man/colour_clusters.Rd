@@ -3,11 +3,9 @@
 \name{colour_clusters}
 \alias{colour_clusters}
 \alias{color_clusters}
-\alias{color_clusters}
 \title{Colour sub-clusters of a tree (dendrogram/hclust) object}
 \usage{
-colour_clusters(d, k = NULL, h = NULL, col = rainbow,
-  groupLabels = NULL)
+colour_clusters(d, k = NULL, h = NULL, col = rainbow, groupLabels = NULL)
 
 color_clusters(d, k = NULL, h = NULL, col = rainbow, groupLabels = NULL)
 }

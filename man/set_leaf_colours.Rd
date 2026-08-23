@@ -3,7 +3,6 @@
 \name{set_leaf_colours}
 \alias{set_leaf_colours}
 \alias{set_leaf_colors}
-\alias{set_leaf_colors}
 \title{Set the leaf colours of a dendrogram}
 \usage{
 set_leaf_colours(d, col, col_to_set = c("edge", "node", "label"))

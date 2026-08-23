@@ -6,7 +6,7 @@
 \alias{dendroextras}
 \title{Extra functions to cut, label and colour dendrogram clusters}
 \description{
-Extra functions to cut, label and colour dendrogram clusters
+Provides extra functions to manipulate dendrograms that build on the base functions provided by the 'stats' package. The main functionality it is designed to add is the ability to colour all the edges in an object of class 'dendrogram' according to cluster membership i.e. each subtree is coloured, not just the terminal leaves. In addition it provides some utility functions to cut 'dendrogram' and 'hclust' objects and to set/get labels.
 }
 \section{Cutting clusters}{
 
@@ -38,6 +38,15 @@ Extra functions to cut, label and colour dendrogram clusters
 \seealso{
 \code{\link{dendrogram}, \link{hclust}} in \code{\link{stats}} 
   package.
+}
+\author{
+\strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com}
+
+Authors:
+\itemize{
+  \item Gregory Jefferis \email{jefferis@gmail.com}
+}
+
 }
 \keyword{dendrogram}
 \keyword{package}

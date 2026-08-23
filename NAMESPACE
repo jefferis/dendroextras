@@ -12,8 +12,10 @@ export(set_leaf_colors)
 export(set_leaf_colours)
 export(slice)
 importFrom(grDevices,rainbow)
-importFrom(stats,as.dendrogram)
-importFrom(stats,as.hclust)
-importFrom(stats,cutree)
-importFrom(stats,dendrapply)
-importFrom(stats,is.leaf)
+importFrom(stats,
+  as.dendrogram,
+  as.hclust,
+  cutree,
+  dendrapply,
+  is.leaf
+)

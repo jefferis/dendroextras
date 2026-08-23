@@ -21,10 +21,8 @@
 #'   \code{\link{labels<-}} methods to get and set the labels of cluster
 #'   members.
 #'   
-#' @name dendroextras-package
 #' @aliases dendroextras
 #' @seealso \code{\link{dendrogram}, \link{hclust}} in \code{\link{stats}} 
 #'   package.
-#' @docType package
 #' @keywords package dendrogram
-NULL
+"_PACKAGE"
